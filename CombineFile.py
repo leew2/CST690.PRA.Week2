@@ -9,7 +9,7 @@ import os
 
 def main():
     file_count, data = 0, 0
-    path = "Week 2/data/"                                               # your path to the files
+    path = "data/"                                               # your path to the files
     all_files = glob.glob(path + "*.xlsx")
     df_list = []
     print("File Name : Data Count")
@@ -20,7 +20,7 @@ def main():
         file_count += 1                                                 # data collection for metrics
     combined_df = pd.concat(df_list, ignore_index=True)                 # combine them
     combined_df.sort_values(by=combined_df.columns[0], inplace=True)
-    combined_df.to_excel("Week 2/main.xlsx", index=False)               # save them to file "...path.../main.xlsx"
+    combined_df.to_excel("main.xlsx", index=False)               # save them to file "...path.../main.xlsx"
     
 # Metrics --------------------------------------------------------------
     datacollection(combined_df.values, "list", "Main.xlsx")
